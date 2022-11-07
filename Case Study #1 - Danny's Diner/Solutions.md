@@ -16,7 +16,7 @@ ORDER by customer_id;
 ````
 
 #### Steps:
-- Use **SUM** and **GROUP BY** to find out ```total_sales``` contributed by each customer.
+- Use **SUM** and **GROUP BY** to find out ```total_spent``` by each customer.
 - Use **JOIN** to merge ```sales``` and ```menu``` tables as ```customer_id``` and ```price``` are from both tables.
 
 
@@ -70,8 +70,8 @@ GROUP by customer_id;
 
 #### Steps:
 - 
-- Instead of **ROW_NUMBER** or **RANK**, use **DENSE_RANK** as ```order_date``` is not time-stamped hence, there is no sequence as to which item is ordered first if 2 or more items are ordered on the same day.
-- Subsequently, **GROUP BY** all columns to show ```rank = 1``` only.
+- Use **ROW_NUMBER** to index the purchases of each customer according to ```order_date```.
+- Subsequently, **GROUP BY** all columns to show ```rn = 1``` only.
 
 #### Answer:
 | customer_id | product_name | 
